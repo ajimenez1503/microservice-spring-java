@@ -24,7 +24,7 @@ mvn --version
 
 #### Create the project
 ```
-mvn archetype:generate -DgroupId=com.example.app -DartifactId=microservice-spring-java -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.example -DartifactId=microservice-spring-java -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 ```
 - Create customer
 

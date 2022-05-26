@@ -1,4 +1,5 @@
-package com.example.fraud;
+package com.example.clients.fraud;
 
 public record FraudCheckResponse(Boolean isFraudster) {
 }
+

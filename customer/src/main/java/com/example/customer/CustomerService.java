@@ -2,12 +2,15 @@ package com.example.customer;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import com.example.clients.fraud.FraudCheckResponse;
+import com.example.clients.fraud.FraudClient;
 
 @Service
 @AllArgsConstructor
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
+    private final FraudClient fraudClient;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -17,9 +20,18 @@ public class CustomerService {
                 .build();
         // todo: check if email valid
         // todo: check if email not taken
-        // Check if fraudster
+
         // store customer
         customerRepository.save(customer);
-        // todo:
+
+        // Check if fraudster
+        FraudCheckResponse fraudCheckResponse =
+                fraudClient.isFraudster(customer.getId());
+
+        if (fraudCheckResponse.isFraudster()) {
+            throw new IllegalStateException("fraudster");
+        }
+
+        // todo: send notitifation
     }
 }
