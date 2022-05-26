@@ -23,22 +23,28 @@ mvn --version
 ```
 
 #### Create the project
+
 ```
 mvn archetype:generate -DgroupId=com.example -DartifactId=microservice-spring-java -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 ```
+
 - Create customer
 
 #### Run docker compose:
+
 ```
 docker-compose -f docker-compose.yml up -d
 ```
+
 - Open pgadmin `http://localhost:5050/`
-  - Add a server
-  - Create the customer database
+    - Add a server
+    - Create the customer database
 
 ### Run the microservice customer
+
 - Run the microservice using intellij
 - Post a customer
+
 ```
 curl -X POST \
   http://localhost:8080/api/v1/customers \
@@ -53,6 +59,11 @@ curl -X POST \
 ```
 
 ### Create a second microservice
+
 #### Create the fraud microservice
+
 - Create the fraud module
 - Create the fraud database
+
+### Check distribute tracing
+http://localhost:9411/zipkin

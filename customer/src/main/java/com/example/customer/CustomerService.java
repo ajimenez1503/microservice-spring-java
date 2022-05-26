@@ -1,9 +1,9 @@
 package com.example.customer;
 
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 import com.example.clients.fraud.FraudCheckResponse;
 import com.example.clients.fraud.FraudClient;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
