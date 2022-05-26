@@ -51,3 +51,8 @@ curl -X POST \
 	"email": "antonio@gmail.com"
 }'
 ```
+
+### Create a second microservice
+#### Create the fraud microservice
+- Create the fraud module
+- Create the fraud database

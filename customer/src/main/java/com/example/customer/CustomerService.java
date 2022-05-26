@@ -17,7 +17,9 @@ public class CustomerService {
                 .build();
         // todo: check if email valid
         // todo: check if email not taken
+        // Check if fraudster
         // store customer
         customerRepository.save(customer);
+        // todo:
     }
 }
